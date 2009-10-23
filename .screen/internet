@@ -1,0 +1,6 @@
+sessionname internet
+screen 1 irssi
+screen 2 rtorrent
+screen 3 /home/kangas/bin/aptitude-update.sh
+hardstatus string "screen@%H: default"
+source .screenrc

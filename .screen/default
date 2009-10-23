@@ -1,0 +1,4 @@
+sessionname default
+screen 0 bash
+hardstatus string "screen@%H: default"
+source .screenrc
