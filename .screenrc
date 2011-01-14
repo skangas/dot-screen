@@ -1,12 +1,7 @@
 # ~/.screenrc
 
-# "screen scraper" using urlview #do we need this?
-#bind b eval "hardcopy_append off" "hardcopy -h $TMP/.screen-urlview" "screen urlview $TMP/.screen-urlview"
 # make xterm scroll back work, by using normal buffer, not alternate
 #termcapinfo xterm|xterms|xs ti=\E7\E[?47l
-
-# make changing of xterm title work
-termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
 
 defscrollback 2000              # Set the default number of scrollback lines
 defutf8 on                      # Run screen in UTF-8 mode
@@ -24,15 +19,13 @@ shell bash
 shelltitle "$ |bash"            # Show running process
 ignorecase on                   # Case-insensitive search
 
-#hardstatus string "screen@%H: %n %t %W"
 hardstatus alwayslastline "%w"  # Always show status line
 hardstatus string "%{.bW}%-Lw%{.rW}%n %t%{-}%+Lw %=%{..G} %H %{..Y} %d/%m %c " 
-#hardstatus string "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<%=%h"
 
 ## TERMINAL
 
 # turn sending of screen messages to hardstatus off
-hardstatus off
+#hardstatus off
 # Set the hardstatus prop on gui terms to set the titlebar/icon title
 termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
 
@@ -57,7 +50,6 @@ termcapinfo xterm 'kh=\EOH:kI=\E[2~:kD=\E[3~:kH=\EOF:kP=\E[5~:kN=\E[6~'
 
 #terminfo xterm 'vb=\E[?5h$<200/>\E[?5l'
 termcapinfo xterm 'vi=\E[?25l:ve=\E[34h\E[?25h:vs=\E[34l'
-
 
 ## automatically refit when i switch windows
 bind 0 eval "select 0" fit
