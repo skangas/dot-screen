@@ -1,9 +1,10 @@
 # ~/.screenrc
 
-# make xterm scroll back work, by using normal buffer, not alternate
-#termcapinfo xterm|xterms|xs ti=\E7\E[?47l
+caption always "%{.bW}%?%-Lw%?%{.rW}%n*%f%t%?(%u)%?%{.bW} %?%+Lw%?%?%=%{..G} %H %{..Y} %m-%d %c "
+hardstatus off
 
-defscrollback 2000              # Set the default number of scrollback lines
+defscrollback 10000             # Set the default number of scrollback lines
+defencoding UTF-8
 defutf8 on                      # Run screen in UTF-8 mode
 activity "activity: window ~%"  # Message when activity occurs in a window
 vbell_msg "bell: window ~%"     # Message for visual bell
@@ -19,15 +20,13 @@ shell bash
 shelltitle "$ |bash"            # Show running process
 ignorecase on                   # Case-insensitive search
 
-hardstatus alwayslastline "%w"  # Always show status line
-hardstatus string "%{.bW}%-Lw%{.rW}%n %t%{-}%+Lw %=%{..G} %H %{..Y} %d/%m %c " 
-
 ## TERMINAL
 
-# turn sending of screen messages to hardstatus off
-#hardstatus off
-# Set the hardstatus prop on gui terms to set the titlebar/icon title
-termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
+# To get screen to add lines to xterm's scrollback buffer, uncomment the
+# following termcapinfo line which tells xterm to use the normal screen buffer
+# (which has scrollback), not the alternate screen buffer.
+#
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
 
 # set these terminals up to be 'optimal' instead of vt100
 termcapinfo xterm*|linux*|rxvt*|Eterm* OP
