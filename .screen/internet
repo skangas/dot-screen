@@ -1,4 +1,5 @@
 sessionname internet
 screen 8 irssi
+screen 8 $HOME/bin/aptitude-update.sh
 screen 9 rtorrent
 source .screenrc
