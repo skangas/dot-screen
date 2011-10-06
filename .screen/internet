@@ -1,4 +1,4 @@
 sessionname internet
 screen 8 irssi
-screen 9 rtorrent
+screen 9 nice -n 19 ionice -c 3 rtorrent
 source .screenrc
