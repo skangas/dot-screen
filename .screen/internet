@@ -1,5 +1,5 @@
 sessionname internet
-screen 7 offlineimap -l $HOMA/offlineimap.log
+screen 7 offlineimap -l $HOME/.offlineimap.log
 screen 8 irssi
 screen 9 nice -n 19 ionice -c 3 rtorrent
 source .screenrc
