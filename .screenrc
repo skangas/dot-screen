@@ -16,7 +16,7 @@ deflogin off                    # Do not register the window in utmp
 startup_message off             # Disable startup messages
 
 logfile $HOME/.screen/log.%n
-shell bash
+shell zsh
 shelltitle "$ |bash"            # Show running process
 ignorecase on                   # Case-insensitive search
 
